@@ -195,7 +195,10 @@ foreach( $images as $image ) {
 	// echo $newvalue.'<br/>';
 
 	// extract url from filename
-	$localurl = 'http://localhost'.$newvalue;
+	$localurl = 'http://localhost/'.$newvalue;
+
+	// remove the _thumb.jpg from the localurl
+	$localurl = str_replace('_thumb.jpg','',$localurl);
 
 	// echo ' - site-url: ['.$localurl.']<br/>';
 
@@ -205,9 +208,9 @@ foreach( $images as $image ) {
 	// echo ' - img-url: ['.$img_url.']<br/>';
 
 	// start of thumbnail content
-	echo '<div class="galleryItem">';
+	// echo '<div class="galleryItem">';
 
-		echo '<a href="'.$localurl.'"><img src="'.$img_url.'" alt="" border=1 width=500 height=150></a><br/>';
+		echo '<a href="'.$localurl.'"><img src="'.$img_url.'" alt="" border=1 width=300 height=150></a><br/>';
 		echo '<a href="'.$localurl.'">'.$localurl.'<br/>'.$img_url.'</a><br/>';
 
 	echo '</div>';
